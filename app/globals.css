@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --noise-opacity: 0.035;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+/* Hide default cursor everywhere */
+*, *::before, *::after,
+html, body, a, button, input, textarea, select {
+  cursor: none !important;
+}
+
+/* Mobile: restore default cursor */
+@media (pointer: coarse) {
+  *, *::before, *::after,
+  html, body, a, button, input, textarea, select {
+    cursor: auto !important;
+  }
+}
+
+  ::selection {
+    background: #c9a84c33;
+    color: #f2ede4;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  /* Grain texture overlay */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: var(--noise-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: grain 0.5s steps(1) infinite;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 50%, #c9a84c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-faint {
+    border-color: rgba(242, 237, 228, 0.07);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a08;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2d3b27;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8a9a7c;
+  }
+}
+
+/* Cursor */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #f2ede4;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(242, 237, 228, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.35s ease, width 0.3s ease, height 0.3s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.cursor-dot.hovering {
+  width: 12px;
+  height: 12px;
+  background: #c9a84c;
+}
+
+.cursor-ring.hovering {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+
+.cursor-dot {
+  z-index: 99999;
+}
+.cursor-ring {
+  z-index: 99998;
+}
+
+
+
+.cursor-sight {
+  width: 56px;   /* was 36px */
+  height: 56px;  /* was 36px */
+  border: none;  /* remove the CSS border — SVG handles it now */
+  border-radius: 50%;
+  z-index: 99999;
+  /* keep everything else the same */
+}
+
+.cursor-sight.hovering {
+  width: 56px;   /* keep size stable, just change glow */
+  height: 56px;
+  border: none;
+  box-shadow: 0 0 16px rgba(232, 114, 28, 0.4);
+}
