@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Syne, DM_Mono } from 'next/font/google';
 import './globals.css';
+import { LangProvider } from '@/lib/lang';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -26,28 +27,22 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'TERRAVA — Ethical Exotics',
-  description:
-    'Where ecosystem restoration meets luxury craft. Ethical exotics that restore balance to nature.'
+  title: 'BIOMIX — Хөрс нөхөн сэргээх шийдэл',
+  description: 'Органик хог хаягдлаас амьдрал эргэн ирнэ. Монголын хөрсийг нөхөн сэргээх органик хөрсний шийдэл.'
 };
 
 export default function RootLayout({
   children
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang='en'
-      className={`${cormorant.variable} ${syne.variable} ${dmMono.variable}`}>
+    <html lang='mn' className={`${cormorant.variable} ${syne.variable} ${dmMono.variable}`}>
       <head>
-        <link
-          rel='preload'
-          href='/videos/desert-bg.mp4'
-          as='video'
-          type='video/mp4'
-        />
+        <link rel='preload' href='/videos/desert-bg.mp4' as='video' type='video/mp4' />
       </head>
       <body className='bg-ink text-cream antialiased overflow-x-hidden'>
-        {children}
+        <LangProvider>
+          {children}
+        </LangProvider>
       </body>
     </html>
   );
