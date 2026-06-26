@@ -1,13 +1,22 @@
 'use client';
 
+import { useState } from 'react'; // нэмнэ
+import Image from 'next/image';
 import { useLang, t } from '@/lib/lang';
 import { c } from '@/lib/content';
-import Image from 'next/image';
-// import Image from 'next/image';
 
 export default function Impact() {
   const { lang } = useLang();
   const imp = c.impact;
+  const cta = c.cta; // нэмнэ
+  const [email, setEmail] = useState(''); // нэмнэ
+  const [submitted, setSubmitted] = useState(false); // нэмнэ
+
+  const handleSubmit = (e: React.FormEvent) => {
+    // нэмнэ
+    e.preventDefault();
+    if (email.trim()) setSubmitted(true);
+  };
 
   return (
     <section
@@ -94,6 +103,60 @@ export default function Impact() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* ═══ CTA — зургийн дээр шууд ═══ */}
+      <div className='relative z-10 border-t border-white/10 mt-0 border-t border-white/[0.06] '>
+        <div className='px-6 md:px-10 py-28 md:py-40 text-center max-w-3xl mx-auto'>
+          <div className='font-mono text-[10px] tracking-[0.22em] uppercase text-sage flex items-center justify-center gap-4 mb-8'>
+            <span className='w-8 h-px bg-sage/40' />
+            {t(cta.eyebrow, lang)}
+            <span className='w-8 h-px bg-sage/40' />
+          </div>
+
+          <h2 className='font-display font-light text-[clamp(38px,5vw,68px)] leading-[0.92] text-cream tracking-[-0.02em] mb-6'>
+            {cta.title[lang][0]}
+            <br />
+            <em className='italic text-gold'>{cta.title[lang][1]}</em>
+            <br />
+            {cta.title[lang][2]}
+          </h2>
+
+          <p className='font-sans text-[13px] leading-[1.85] text-cream/50 mb-12 max-w-md mx-auto'>
+            {t(cta.subtitle, lang)}
+          </p>
+
+          {!submitted ? (
+            <form
+              onSubmit={handleSubmit}
+              className='flex flex-col sm:flex-row gap-0 max-w-sm mx-auto'>
+              <input
+                type='email'
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder={t(cta.placeholder, lang)}
+                required
+                className='flex-1 bg-white/[0.06] border border-white/10 px-5 py-4 font-mono text-[11px] tracking-wider text-cream placeholder-cream/25 outline-none focus:border-sage/50 transition-all duration-300'
+              />
+              <button
+                type='submit'
+                className='bg-cream text-ink font-mono text-[10px] tracking-[0.18em] uppercase px-8 py-4 hover:bg-gold transition-colors duration-300 flex-shrink-0 font-light'>
+                {t(cta.btn, lang)}
+              </button>
+            </form>
+          ) : (
+            <div className='flex items-center justify-center gap-4 py-4'>
+              <div className='w-2 h-2 rounded-full bg-sage' />
+              <span className='font-mono text-[11px] tracking-[0.15em] uppercase text-sage'>
+                {t(cta.success, lang)}
+              </span>
+            </div>
+          )}
+
+          <p className='font-mono text-[9px] tracking-[0.12em] uppercase text-cream/20 mt-6'>
+            {t(cta.fine, lang)}
+          </p>
         </div>
       </div>
 
