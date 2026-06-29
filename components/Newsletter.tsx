@@ -312,7 +312,7 @@ function Modal({ article, lang, onClose }: ModalProps) {
         }}
       >
         {/* Header */}
-        <div className="flex items-start justify-between p-7 md:p-9 border-b border-white/[0.06] flex-shrink-0">
+        <div className="flex items-start justify-between p-5 sm:p-7 md:p-9 border-b border-white/[0.06] flex-shrink-0">
           <div className="pr-8">
             <div className="flex items-center gap-3 mb-3">
               <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-sage border border-sage/30 px-2 py-1">
@@ -322,7 +322,7 @@ function Modal({ article, lang, onClose }: ModalProps) {
                 {t(article.date, lang)}
               </span>
             </div>
-            <h2 className="font-display font-light text-[clamp(22px,3vw,30px)] leading-[1.15] text-cream tracking-[-0.01em]">
+            <h2 className="font-display font-light text-[clamp(18px,4vw,30px)] leading-[1.15] text-cream tracking-[-0.01em]">
               {t(article.title, lang)}
             </h2>
           </div>
@@ -337,13 +337,13 @@ function Modal({ article, lang, onClose }: ModalProps) {
         </div>
 
         {/* Scrollable body */}
-        <div className="overflow-y-auto flex-1 p-7 md:p-9">
+        <div className="overflow-y-auto flex-1 p-5 sm:p-7 md:p-9">
           {t(article.body, lang)
             .split("\n\n")
             .map((para, i) => (
               <p
                 key={i}
-                className="font-sans text-[15px] leading-[1.9] text-cream/90 mb-5 last:mb-0 whitespace-pre-line"
+                className="font-sans text-[13px] sm:text-[15px] leading-[1.85] text-cream/90 mb-4 sm:mb-5 last:mb-0 whitespace-pre-line"
               >
                 {para}
               </p>
@@ -351,7 +351,7 @@ function Modal({ article, lang, onClose }: ModalProps) {
         </div>
 
         {/* Footer */}
-        <div className="flex-shrink-0 border-t border-white/[0.06] px-7 md:px-9 py-4 flex items-center justify-between">
+        <div className="flex-shrink-0 border-t border-white/[0.06] px-5 sm:px-7 md:px-9 py-4 flex items-center justify-between">
           <div className="font-mono text-[9px] tracking-[0.15em] uppercase text-cream/75">
             BIOMIX — {t(article.date, lang)}
           </div>
@@ -376,7 +376,7 @@ export default function Newsletter() {
     <>
       <section
         id="newsletter"
-        className="py-24 md:py-36 px-8 md:px-12 lg:px-16 border-t border-white/[0.06] relative"
+        className="py-14 sm:py-24 md:py-36 px-5 sm:px-8 md:px-12 lg:px-16 border-t border-white/[0.06] relative"
       >
         {/* Subtle top glow */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sage/30 to-transparent" />
@@ -389,7 +389,7 @@ export default function Newsletter() {
                 <span className="w-10 h-px bg-sage/40" />
                 {lang === "mn" ? "05 — Мэдээ мэдээлэл" : "05 — Field Notes"}
               </div>
-              <h2 className="font-display font-light text-[clamp(42px,5vw,72px)] leading-[0.95] text-cream tracking-[-0.01em]">
+              <h2 className="font-display font-light text-[clamp(30px,7vw,72px)] leading-[0.97] text-cream tracking-[-0.01em]">
                 {lang === "mn" ? (
                   <>
                     ТАЛБАРЫН
@@ -424,7 +424,7 @@ export default function Newsletter() {
                 {/* Top accent line */}
                 <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-sage/0 to-transparent group-hover:via-sage/50 transition-all duration-500" />
 
-                <div className="p-7 md:p-8">
+                <div className="p-5 sm:p-7 md:p-8">
                   {/* Meta */}
                   <div className="flex items-center gap-3 mb-5">
                     <span className="font-mono text-[8px] tracking-[0.18em] uppercase text-sage border border-sage/25 px-2 py-1">
@@ -436,12 +436,12 @@ export default function Newsletter() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-display font-light text-[22px] md:text-[26px] leading-[1.2] text-cream mb-4 tracking-[-0.01em] group-hover:text-gold transition-colors duration-300">
+                  <h3 className="font-display font-light text-[18px] sm:text-[22px] md:text-[26px] leading-[1.2] text-cream mb-4 tracking-[-0.01em] group-hover:text-gold transition-colors duration-300">
                     {t(article.title, lang)}
                   </h3>
 
                   {/* Excerpt */}
-                  <p className="font-sans text-[14px] leading-[1.75] text-cream/85 mb-6">
+                  <p className="font-sans text-[12px] sm:text-[14px] leading-[1.75] text-cream/85 mb-4 sm:mb-6">
                     {t(article.excerpt, lang)}
                   </p>
 

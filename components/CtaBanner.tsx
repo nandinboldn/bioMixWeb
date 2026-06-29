@@ -31,25 +31,25 @@ export default function CtaBanner() {
         </svg>
       </div>
 
-      <div className="relative z-10 px-6 md:px-10 py-28 md:py-40 text-center max-w-3xl mx-auto">
+      <div className="relative z-10 px-6 md:px-10 py-20 sm:py-28 md:py-40 text-center max-w-3xl mx-auto px-4 sm:px-6">
         <div className="font-mono text-[13px] tracking-[0.16em] uppercase text-sage flex items-center justify-center gap-4 mb-8">
           <span className="w-8 h-px bg-sage/40" />
           {t(cta.eyebrow, lang)}
           <span className="w-8 h-px bg-sage/40" />
         </div>
 
-        <h2 className="font-display font-light text-[clamp(44px,5.5vw,80px)] leading-[0.92] text-cream tracking-[-0.02em] mb-6">
+        <h2 className="font-display font-light text-[clamp(32px,7vw,80px)] leading-[0.92] text-cream tracking-[-0.02em] mb-6">
           {cta.title[lang][0]}<br />
           <em className="italic text-gold">{cta.title[lang][1]}</em><br />
           {cta.title[lang][2]}
         </h2>
 
-        <p className="font-sans text-[16px] leading-[1.85] text-cream/85 mb-12 max-w-md mx-auto">
+        <p className="font-sans text-[14px] sm:text-[16px] leading-[1.8] text-cream/85 mb-8 sm:mb-12 max-w-md mx-auto">
           {t(cta.subtitle, lang)}
         </p>
 
         {!submitted ? (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-0 max-w-sm mx-auto">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-0 max-w-sm mx-auto">
             <input
               type="email"
               value={email}

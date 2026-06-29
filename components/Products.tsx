@@ -60,15 +60,15 @@ export default function Products() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <section id="products" className="py-24 md:py-36 px-8 md:px-12 lg:px-16 border-t border-white/[0.06]">
+    <section id="products" className="py-14 sm:py-24 md:py-36 px-5 sm:px-8 md:px-12 lg:px-16 border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div>
-            <div className="font-mono text-[13px] tracking-[0.16em] uppercase text-sage flex items-center gap-4 mb-6">
+            <div className="font-mono text-[11px] sm:text-[12px] tracking-[0.14em] uppercase text-sage flex items-center gap-3 mb-4 sm:mb-6">
               <span>{t(p.eyebrow, lang)}</span>
             </div>
-            <h2 className="font-display font-light text-[clamp(42px,5vw,72px)] leading-[0.95] text-cream tracking-[-0.01em]">
+            <h2 className="font-display font-light text-[clamp(30px,7vw,72px)] leading-[0.95] text-cream tracking-[-0.01em]">
               {p.title[lang][0]}<br />
               <em className="italic text-gold">{p.title[lang][1]}</em><br />
               {p.title[lang][2]}
@@ -110,7 +110,7 @@ export default function Products() {
               <div className="p-5 border-t border-white/[0.06]">
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <h3 className="font-sans font-medium text-[17px] text-cream mb-0.5">{t(product.name, lang)}</h3>
+                    <h3 className="font-sans font-medium text-[15px] sm:text-[17px] text-cream mb-0.5">{t(product.name, lang)}</h3>
                     <div className="font-mono text-[11px] tracking-[0.15em] uppercase text-cream/85">{t(product.species, lang)}</div>
                   </div>
                 </div>

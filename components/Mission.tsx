@@ -34,13 +34,13 @@ export default function Mission() {
   const titles = m.title[lang];
 
   return (
-    <section id="mission" ref={sectionRef} className="py-28 md:py-40 px-8 md:px-12 lg:px-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-center">
+    <section id="mission" ref={sectionRef} className="py-16 sm:py-24 md:py-40 px-5 sm:px-8 md:px-12 lg:px-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-28 items-center">
         {/* Visual side */}
         <div className="relative order-2 lg:order-1">
           <div
             data-reveal
-            className="relative aspect-[3/4] max-w-[420px] mx-auto lg:mx-0"
+            className="relative aspect-[3/4] max-w-[280px] sm:max-w-[360px] md:max-w-[420px] mx-auto lg:mx-0"
             style={{ opacity: 0, transform: "translateY(40px)", transition: "opacity 0.9s ease, transform 0.9s ease" }}
           >
             <div className="absolute -inset-4 border border-sage/15 rounded-sm pointer-events-none" />
@@ -85,7 +85,7 @@ export default function Mission() {
           {/* Floating spec tag */}
           <div
             data-reveal
-            className="absolute -bottom-6 -right-4 lg:right-auto lg:-left-8 bg-charcoal border border-white/08 px-5 py-4 max-w-[200px]"
+            className="hidden sm:block absolute -bottom-6 -right-4 lg:right-auto lg:-left-8 bg-charcoal border border-white/08 px-5 py-4 max-w-[200px]"
             style={{ opacity: 0, transform: "translateY(40px)", transition: "opacity 0.9s 0.3s ease, transform 0.9s 0.3s ease" }}
           >
             <div className="font-mono text-[9px] tracking-[0.18em] uppercase text-sage mb-1">{t(m.specimen.label, lang)}</div>
@@ -98,7 +98,7 @@ export default function Mission() {
         <div className="order-1 lg:order-2">
           <div
             data-reveal
-            className="font-mono text-[13px] tracking-[0.16em] uppercase text-sage flex items-center gap-4 mb-10"
+            className="font-mono text-[11px] sm:text-[13px] tracking-[0.14em] uppercase text-sage flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10"
             style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}
           >
             <span className="w-12 h-px bg-sage/40" />
@@ -107,7 +107,7 @@ export default function Mission() {
 
           <h2
             data-reveal
-            className="font-display font-light text-[clamp(44px,5.5vw,76px)] leading-[1.0] text-cream mb-8 tracking-[-0.01em]"
+            className="font-display font-light text-[clamp(32px,7vw,76px)] leading-[1.05] text-cream mb-8 tracking-[-0.01em]"
             style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}
           >
             {titles[0]}<br />
@@ -121,8 +121,8 @@ export default function Mission() {
             className="space-y-5 mb-12"
             style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}
           >
-            <p className="font-sans text-[15px] leading-[1.85] text-cream/90">{t(m.body1, lang)}</p>
-            <p className="font-sans text-[15px] leading-[1.85] text-cream/90">{t(m.body2, lang)}</p>
+            <p className="font-sans text-[14px] sm:text-[15px] leading-[1.8] text-cream/90">{t(m.body1, lang)}</p>
+            <p className="font-sans text-[14px] sm:text-[15px] leading-[1.8] text-cream/90">{t(m.body2, lang)}</p>
           </div>
 
           <div
@@ -133,7 +133,7 @@ export default function Mission() {
             {m.features[lang].map((item) => (
               <div key={item} className="flex items-center gap-4">
                 <div className="w-1 h-1 rounded-full bg-gold flex-shrink-0" />
-                <span className="font-sans text-[14px] tracking-wide text-cream/90">{item}</span>
+                <span className="font-sans text-[13px] sm:text-[14px] tracking-wide text-cream/90">{item}</span>
               </div>
             ))}
           </div>
