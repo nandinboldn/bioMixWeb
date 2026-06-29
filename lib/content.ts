@@ -19,11 +19,11 @@ export const c = {
 
   hero: {
     eyebrow: {
-      mn: 'Ургуулагч танд зориулав — 2019 оноос',
+      mn: 'Ургуулагч танд зориулав — 2016 оноос',
       en: 'Made for Growers — Est. 2019'
     },
     title: {
-      mn: ['ХӨРСНӨӨС', 'АМЬДРАЛ', 'ЭХЭЛДЭГ.'],
+      mn: ['ЦӨЛЖИЛТИЙН', 'ЭСРЭГ', 'МОНГОЛЫН ХӨРС'],
       en: ['FROM SOIL,', 'LIFE', 'BEGINS.']
     },
     desc: {
@@ -144,6 +144,19 @@ export const c = {
         },
         pattern: 'ring',
         color: 'Earth'
+      },
+      {
+        id: 4,
+        name: { mn: 'BIOMIX Тусгай', en: 'BIOMIX Special' },
+        species: { mn: 'Хөрс нөхөн сэргээлт', en: 'Soil Remediation' },
+        region: { mn: 'Тариалангийн талбай', en: 'Agricultural Fields' },
+        tag: null,
+        description: {
+          mn: 'Байгальд хаягдал гэж байдаггүй. Органик нөөцийг үржил шимт хөрс болгон хувиргаж, байгалийн мөчлөгийг Монголын хөрсөнд үргэлжлүүлдэг.',
+          en: "There is no waste in nature. We transform organic resources into fertile soil, continuing nature's cycle in Mongolia's earth."
+        },
+        pattern: 'smooth',
+        color: 'Moss'
       }
     ],
     viewAll: { mn: 'Бүгдийг харах', en: 'View all' }
@@ -209,7 +222,7 @@ export const c = {
   impact: {
     eyebrow: { mn: '04 — Бодит нөлөө', en: '04 — Real Impact' },
     title: {
-      mn: ['ТОО', 'ХУДАЛ ХЭЛДЭГГҮЙ.'],
+      mn: ['ТООНУУД', 'ИЛЧИЛДЭГ.'],
       en: ['THE NUMBERS', 'SPEAK CLEARLY.']
     },
     items: [

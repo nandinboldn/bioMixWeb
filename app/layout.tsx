@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Cormorant_Garamond, Syne, DM_Mono } from 'next/font/google';
 import './globals.css';
 import { LangProvider } from '@/lib/lang';
+import BackgroundTransition from '@/components/BackgroundTransition';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -41,7 +42,12 @@ export default function RootLayout({
       </head>
       <body className='bg-ink text-cream antialiased overflow-x-hidden'>
         <LangProvider>
-          {children}
+          {/* Global desert→forest background */}
+          <BackgroundTransition />
+          {/* All content above background */}
+          <div className="relative" style={{ zIndex: 1 }}>
+            {children}
+          </div>
         </LangProvider>
       </body>
     </html>

@@ -15,7 +15,8 @@ export default function Hero() {
     title.style.opacity = '0';
     title.style.transform = 'translateY(40px)';
     const tid = setTimeout(() => {
-      title.style.transition = 'opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1)';
+      title.style.transition =
+        'opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1)';
       title.style.opacity = '1';
       title.style.transform = 'translateY(0)';
     }, 200);
@@ -25,25 +26,85 @@ export default function Hero() {
   const titles = hero.title[lang];
 
   return (
-    <section className='relative min-h-screen flex flex-col justify-end overflow-hidden'>
-      {/* Desert video background */}
-      <video autoPlay muted loop playsInline className='absolute inset-0 w-full h-full object-cover opacity-40'>
-        <source src='/videos/desert-bg.mp4' type='video/mp4' />
-      </video>
+    <section className='relative min-h-screen flex flex-col justify-end overflow-visible'>
+      {/* Background handled globally by BackgroundTransition in layout */}
 
       {/* Decorative SVG */}
       <div className='absolute right-0 top-0 w-[55%] h-full opacity-20 pointer-events-none'>
-        <svg viewBox='0 0 600 800' fill='none' xmlns='http://www.w3.org/2000/svg' className='w-full h-full object-cover'>
-          <ellipse cx='400' cy='200' rx='250' ry='350' stroke='#8a9a7c' strokeWidth='0.5' opacity='0.4' />
-          <ellipse cx='350' cy='250' rx='180' ry='280' stroke='#c9a84c' strokeWidth='0.5' opacity='0.3' />
-          <circle cx='380' cy='400' r='300' stroke='#2d3b27' strokeWidth='1' opacity='0.5' />
-          <circle cx='380' cy='400' r='240' stroke='#2d3b27' strokeWidth='0.5' opacity='0.3' />
-          <line x1='380' y1='0' x2='380' y2='800' stroke='#8a9a7c' strokeWidth='0.3' opacity='0.2' strokeDasharray='4 8' />
-          <line x1='0' y1='400' x2='600' y2='400' stroke='#8a9a7c' strokeWidth='0.3' opacity='0.2' strokeDasharray='4 8' />
-          {[0,1,2,3,4].map(row => [0,1,2,3].map(col => (
-            <ellipse key={`${row}-${col}`} cx={200+col*60+(row%2)*30} cy={150+row*55}
-              rx='28' ry='36' stroke='#c9a84c' strokeWidth='0.4' fill='none' opacity='0.15' />
-          )))}
+        <svg
+          viewBox='0 0 600 800'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+          className='w-full h-full object-cover'>
+          <ellipse
+            cx='400'
+            cy='200'
+            rx='250'
+            ry='350'
+            stroke='#8a9a7c'
+            strokeWidth='0.5'
+            opacity='0.4'
+          />
+          <ellipse
+            cx='350'
+            cy='250'
+            rx='180'
+            ry='280'
+            stroke='#c9a84c'
+            strokeWidth='0.5'
+            opacity='0.3'
+          />
+          <circle
+            cx='380'
+            cy='400'
+            r='300'
+            stroke='#2d3b27'
+            strokeWidth='1'
+            opacity='0.5'
+          />
+          <circle
+            cx='380'
+            cy='400'
+            r='240'
+            stroke='#2d3b27'
+            strokeWidth='0.5'
+            opacity='0.3'
+          />
+          <line
+            x1='380'
+            y1='0'
+            x2='380'
+            y2='800'
+            stroke='#8a9a7c'
+            strokeWidth='0.3'
+            opacity='0.2'
+            strokeDasharray='4 8'
+          />
+          <line
+            x1='0'
+            y1='400'
+            x2='600'
+            y2='400'
+            stroke='#8a9a7c'
+            strokeWidth='0.3'
+            opacity='0.2'
+            strokeDasharray='4 8'
+          />
+          {[0, 1, 2, 3, 4].map(row =>
+            [0, 1, 2, 3].map(col => (
+              <ellipse
+                key={`${row}-${col}`}
+                cx={200 + col * 60 + (row % 2) * 30}
+                cy={150 + row * 55}
+                rx='28'
+                ry='36'
+                stroke='#c9a84c'
+                strokeWidth='0.4'
+                fill='none'
+                opacity='0.15'
+              />
+            ))
+          )}
         </svg>
       </div>
 
@@ -52,17 +113,21 @@ export default function Hero() {
       <div className='absolute top-1/2 right-[15%] w-48 h-48 rounded-full bg-gold/10 blur-[60px] animate-float [animation-delay:2s] pointer-events-none' />
 
       {/* Content */}
-      <div className='relative z-10 px-8 md:px-12 lg:px-16 pb-20 md:pb-28 max-w-[800px]'>
+      <div className='relative z-10 px-8 md:px-12 lg:px-16 pb-20 md:pb-28 max-w-[900px]'>
         {/* Eyebrow */}
-        <div className='flex items-center gap-4 mb-7' style={{ animation: 'fadeSlideUp 0.8s 0.4s both' }}>
+        <div
+          className='flex items-center gap-4 mb-7'
+          style={{ animation: 'fadeSlideUp 0.8s 0.4s both' }}>
           <span className='block w-10 h-px bg-sage/60' />
-          <span className='font-mono text-[10px] tracking-[0.22em] uppercase text-sage'>
+          <span className='font-mono text-[18px] tracking-[0.22em] uppercase text-sage font-medium'>
             {t(hero.eyebrow, lang)}
           </span>
         </div>
 
         {/* Title */}
-        <h1 ref={titleRef} className='font-display font-light text-[clamp(60px,9vw,120px)] leading-[0.90] tracking-[-0.02em] text-cream mb-8'>
+        <h1
+          ref={titleRef}
+          className='font-display font-light text-[clamp(52px,7.5vw,105px)] leading-[0.95] tracking-[-0.02em] text-cream mb-8'>
           {titles[0]}
           <br />
           <em className='italic text-gradient-gold'>{titles[1]}</em>
@@ -71,28 +136,37 @@ export default function Hero() {
         </h1>
 
         {/* Description */}
-        <p className='font-sans text-[13px] leading-[1.9] text-cream/55 max-w-[420px] mb-10 font-normal'
+        <p
+          className='font-sans text-[18px] leading-[1.9] text-cream/90 max-w-[420px] mb-10 font-normal'
           style={{ animation: 'fadeSlideUp 0.8s 0.8s both' }}>
           {t(hero.desc, lang)}
         </p>
 
         {/* CTAs */}
-        <div className='flex flex-wrap items-center gap-8' style={{ animation: 'fadeSlideUp 0.8s 1s both' }}>
-          <a href='#products'
+        <div
+          className='flex flex-wrap items-center gap-8'
+          style={{ animation: 'fadeSlideUp 0.8s 1s both' }}>
+          <a
+            href='#products'
             className='font-mono text-[11px] tracking-[0.15em] uppercase bg-cream text-ink px-8 py-4 hover:bg-gold transition-colors duration-300 font-light'>
             {t(hero.cta1, lang)}
           </a>
-          <a href='#mission'
-            className='font-mono text-[11px] tracking-[0.15em] uppercase text-cream/55 hover:text-cream flex items-center gap-2 transition-colors duration-300 group'>
+          <a
+            href='#mission'
+            className='font-mono text-[11px] tracking-[0.15em] uppercase text-cream/90 hover:text-cream flex items-center gap-2 transition-colors duration-300 group'>
             {t(hero.cta2, lang)}
-            <span className='group-hover:translate-x-1 transition-transform duration-300'>→</span>
+            <span className='group-hover:translate-x-1 transition-transform duration-300'>
+              →
+            </span>
           </a>
         </div>
       </div>
 
       {/* Scroll indicator */}
       <div className='absolute bottom-10 right-10 md:right-12 z-10 flex flex-col items-center gap-3'>
-        <span className='font-mono text-[9px] tracking-[0.25em] uppercase text-cream/30 [writing-mode:vertical-rl]'>Scroll</span>
+        <span className='font-mono text-[9px] tracking-[0.25em] uppercase text-cream/70 [writing-mode:vertical-rl]'>
+          Scroll
+        </span>
         <div className='w-px h-14 bg-gradient-to-b from-cream/30 to-transparent animate-scroll-line' />
       </div>
 

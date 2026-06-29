@@ -62,7 +62,7 @@ export default function Process() {
         <div className="mb-20">
           <div
             data-reveal
-            className="font-mono text-[10px] tracking-[0.22em] uppercase text-sage flex items-center gap-4 mb-6"
+            className="font-mono text-[13px] tracking-[0.16em] uppercase text-sage flex items-center gap-4 mb-6"
             style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}
           >
             <span className="w-10 h-px bg-sage/40" />
@@ -70,7 +70,7 @@ export default function Process() {
           </div>
           <h2
             data-reveal
-            className="font-display font-light text-[clamp(36px,4.5vw,60px)] leading-[0.95] text-cream tracking-[-0.01em] max-w-xl"
+            className="font-display font-light text-[clamp(42px,5vw,72px)] leading-[0.95] text-cream tracking-[-0.01em] max-w-xl"
             style={{ opacity: 0, transform: "translateY(24px)", transition: "opacity 0.8s 0.1s ease, transform 0.8s 0.1s ease" }}
           >
             {p.title[lang][0]}<br />
@@ -88,10 +88,10 @@ export default function Process() {
               className="bg-charcoal p-8 relative group hover:bg-moss/10 transition-colors duration-500"
               style={{ opacity: 0, transform: "translateY(30px)", transition: `opacity 0.8s ${i*0.1}s ease, transform 0.8s ${i*0.1}s ease, background-color 0.5s ease` }}
             >
-              <div className="font-mono text-[11px] tracking-[0.2em] text-sage/40 mb-8">{step.num}</div>
+              <div className="font-mono text-[11px] tracking-[0.2em] text-sage/80 mb-8">{step.num}</div>
               <div className="text-sage mb-6 group-hover:text-gold transition-colors duration-400">{icons[i]}</div>
-              <h3 className="font-sans font-medium text-[15px] text-cream mb-3">{t(step.title, lang)}</h3>
-              <p className="font-sans text-[12px] leading-[1.8] text-cream/45">{t(step.desc, lang)}</p>
+              <h3 className="font-sans font-medium text-[18px] text-cream mb-3">{t(step.title, lang)}</h3>
+              <p className="font-sans text-[15px] leading-[1.8] text-cream/85">{t(step.desc, lang)}</p>
             </div>
           ))}
         </div>
@@ -104,7 +104,7 @@ export default function Process() {
         >
           <div>
             <p className="font-display text-[22px] font-light text-cream mb-1">{t(p.ctaTitle, lang)}</p>
-            <p className="font-sans text-[12px] text-cream/45 leading-relaxed">{t(p.ctaSub, lang)}</p>
+            <p className="font-sans text-[12px] text-cream/85 leading-relaxed">{t(p.ctaSub, lang)}</p>
           </div>
           <a
             href="#"

@@ -90,7 +90,7 @@ export default function Mission() {
           >
             <div className="font-mono text-[9px] tracking-[0.18em] uppercase text-sage mb-1">{t(m.specimen.label, lang)}</div>
             <div className="font-display text-[15px] font-light text-cream">{t(m.specimen.name, lang)}</div>
-            <div className="font-mono text-[9px] tracking-[0.12em] text-muted mt-0.5">{m.specimen.sub}</div>
+            <div className="font-mono text-[9px] tracking-[0.12em] text-cream/70 mt-0.5">{m.specimen.sub}</div>
           </div>
         </div>
 
@@ -98,7 +98,7 @@ export default function Mission() {
         <div className="order-1 lg:order-2">
           <div
             data-reveal
-            className="font-mono text-[10px] tracking-[0.22em] uppercase text-sage flex items-center gap-4 mb-10"
+            className="font-mono text-[13px] tracking-[0.16em] uppercase text-sage flex items-center gap-4 mb-10"
             style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}
           >
             <span className="w-12 h-px bg-sage/40" />
@@ -107,7 +107,7 @@ export default function Mission() {
 
           <h2
             data-reveal
-            className="font-display font-light text-[clamp(38px,5vw,64px)] leading-[1.0] text-cream mb-8 tracking-[-0.01em]"
+            className="font-display font-light text-[clamp(44px,5.5vw,76px)] leading-[1.0] text-cream mb-8 tracking-[-0.01em]"
             style={{ opacity: 0, transform: "translateY(30px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}
           >
             {titles[0]}<br />
@@ -121,8 +121,8 @@ export default function Mission() {
             className="space-y-5 mb-12"
             style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s ease, transform 0.8s ease" }}
           >
-            <p className="font-sans text-[13px] leading-[1.85] text-cream/55">{t(m.body1, lang)}</p>
-            <p className="font-sans text-[13px] leading-[1.85] text-cream/55">{t(m.body2, lang)}</p>
+            <p className="font-sans text-[15px] leading-[1.85] text-cream/90">{t(m.body1, lang)}</p>
+            <p className="font-sans text-[15px] leading-[1.85] text-cream/90">{t(m.body2, lang)}</p>
           </div>
 
           <div
@@ -133,7 +133,7 @@ export default function Mission() {
             {m.features[lang].map((item) => (
               <div key={item} className="flex items-center gap-4">
                 <div className="w-1 h-1 rounded-full bg-gold flex-shrink-0" />
-                <span className="font-sans text-[12px] tracking-wide text-cream/60">{item}</span>
+                <span className="font-sans text-[14px] tracking-wide text-cream/90">{item}</span>
               </div>
             ))}
           </div>
@@ -145,7 +145,7 @@ export default function Mission() {
           >
             <a
               href="#process"
-              className="font-mono text-[11px] tracking-[0.15em] uppercase text-cream/50 hover:text-cream flex items-center gap-3 transition-colors duration-300 group w-fit"
+              className="font-mono text-[11px] tracking-[0.15em] uppercase text-cream/85 hover:text-cream flex items-center gap-3 transition-colors duration-300 group w-fit"
             >
               {t(m.cta, lang)}
               <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
