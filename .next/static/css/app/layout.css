@@ -938,41 +938,27 @@ video {
   display: none;
 }
   :root {
-    --noise-opacity: 0.035;
+    --noise-opacity: 0.03;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
-/* Hide default cursor everywhere */
-*, *::before, *::after,
-html, body, a, button, input, textarea, select {
-  cursor: none !important;
-}
-
-/* Mobile: restore default cursor */
-@media (pointer: coarse) {
+  /* Hide default cursor */
   *, *::before, *::after,
   html, body, a, button, input, textarea, select {
-    cursor: auto !important;
+    cursor: none !important;
   }
-}
-
-  ::-moz-selection {
-    background: #c9a84c33;
-    color: #f2ede4;
-  }
-
-  ::selection {
-    background: #c9a84c33;
-    color: #f2ede4;
+  @media (pointer: coarse) {
+    *, *::before, *::after,
+    html, body, a, button, input, textarea, select {
+      cursor: auto !important;
+    }
   }
 
-  * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  ::-moz-selection { background: #c9a84c33; color: #f2ede4; }
+
+  ::selection { background: #c9a84c33; color: #f2ede4; }
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .pointer-events-none {
   pointer-events: none;
 }
@@ -981,12 +967,6 @@ html, body, a, button, input, textarea, select {
 }
 .visible {
   visibility: visible;
-}
-.invisible {
-  visibility: hidden;
-}
-.static {
-  position: static;
 }
 .fixed {
   position: fixed;
@@ -1019,8 +999,11 @@ html, body, a, button, input, textarea, select {
 .bottom-0 {
   bottom: 0px;
 }
-.bottom-10 {
-  bottom: 2.5rem;
+.bottom-4 {
+  bottom: 1rem;
+}
+.bottom-8 {
+  bottom: 2rem;
 }
 .left-4 {
   left: 1rem;
@@ -1028,8 +1011,11 @@ html, body, a, button, input, textarea, select {
 .right-0 {
   right: 0px;
 }
-.right-10 {
-  right: 2.5rem;
+.right-5 {
+  right: 1.25rem;
+}
+.right-6 {
+  right: 1.5rem;
 }
 .right-\[15\%\] {
   right: 15%;
@@ -1049,12 +1035,6 @@ html, body, a, button, input, textarea, select {
 .top-4 {
   top: 1rem;
 }
-.left-1\/2 {
-  left: 50%;
-}
-.top-\[15\%\] {
-  top: 15%;
-}
 .z-10 {
   z-index: 10;
 }
@@ -1064,8 +1044,8 @@ html, body, a, button, input, textarea, select {
 .z-50 {
   z-index: 50;
 }
-.z-0 {
-  z-index: 0;
+.z-\[200\] {
+  z-index: 200;
 }
 .order-1 {
   order: 1;
@@ -1089,6 +1069,9 @@ html, body, a, button, input, textarea, select {
 .mb-12 {
   margin-bottom: 3rem;
 }
+.mb-14 {
+  margin-bottom: 3.5rem;
+}
 .mb-16 {
   margin-bottom: 4rem;
 }
@@ -1098,20 +1081,17 @@ html, body, a, button, input, textarea, select {
 .mb-20 {
   margin-bottom: 5rem;
 }
-.mb-24 {
-  margin-bottom: 6rem;
-}
 .mb-3 {
   margin-bottom: 0.75rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
 .mb-6 {
   margin-bottom: 1.5rem;
-}
-.mb-7 {
-  margin-bottom: 1.75rem;
 }
 .mb-8 {
   margin-bottom: 2rem;
@@ -1128,9 +1108,6 @@ html, body, a, button, input, textarea, select {
 .mt-12 {
   margin-top: 3rem;
 }
-.mt-16 {
-  margin-top: 4rem;
-}
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1140,17 +1117,11 @@ html, body, a, button, input, textarea, select {
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mt-0 {
-  margin-top: 0px;
-}
-.mt-10 {
-  margin-top: 2.5rem;
+.mt-8 {
+  margin-top: 2rem;
 }
 .block {
   display: block;
-}
-.inline {
-  display: inline;
 }
 .flex {
   display: flex;
@@ -1164,17 +1135,11 @@ html, body, a, button, input, textarea, select {
 .aspect-\[3\/4\] {
   aspect-ratio: 3/4;
 }
-.aspect-\[2\/3\] {
-  aspect-ratio: 2/3;
-}
 .h-1 {
   height: 0.25rem;
 }
 .h-10 {
   height: 2.5rem;
-}
-.h-14 {
-  height: 3.5rem;
 }
 .h-2 {
   height: 0.5rem;
@@ -1191,23 +1156,17 @@ html, body, a, button, input, textarea, select {
 .h-64 {
   height: 16rem;
 }
+.h-8 {
+  height: 2rem;
+}
 .h-full {
   height: 100%;
 }
 .h-px {
   height: 1px;
 }
-.h-32 {
-  height: 8rem;
-}
-.h-80 {
-  height: 20rem;
-}
-.h-\[35\%\] {
-  height: 35%;
-}
-.h-\[45\%\] {
-  height: 45%;
+.max-h-\[85vh\] {
+  max-height: 85vh;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -1239,8 +1198,8 @@ html, body, a, button, input, textarea, select {
 .w-8 {
   width: 2rem;
 }
-.w-\[340px\] {
-  width: 340px;
+.w-\[280px\] {
+  width: 280px;
 }
 .w-\[55\%\] {
   width: 55%;
@@ -1255,8 +1214,8 @@ html, body, a, button, input, textarea, select {
 .w-px {
   width: 1px;
 }
-.w-80 {
-  width: 20rem;
+.max-w-2xl {
+  max-width: 42rem;
 }
 .max-w-3xl {
   max-width: 48rem;
@@ -1270,11 +1229,14 @@ html, body, a, button, input, textarea, select {
 .max-w-\[260px\] {
   max-width: 260px;
 }
-.max-w-\[420px\] {
-  max-width: 420px;
+.max-w-\[280px\] {
+  max-width: 280px;
 }
-.max-w-\[800px\] {
-  max-width: 800px;
+.max-w-\[340px\] {
+  max-width: 340px;
+}
+.max-w-\[95vw\] {
+  max-width: 95vw;
 }
 .max-w-lg {
   max-width: 32rem;
@@ -1303,10 +1265,6 @@ html, body, a, button, input, textarea, select {
 }
 .translate-y-\[6px\] {
   --tw-translate-y: 6px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-x-1\/2 {
-  --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .-rotate-45 {
@@ -1355,6 +1313,14 @@ html, body, a, button, input, textarea, select {
 .cursor-none {
   cursor: none;
 }
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.resize {
+  resize: both;
+}
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -1363,9 +1329,6 @@ html, body, a, button, input, textarea, select {
 }
 .flex-col {
   flex-direction: column;
-}
-.flex-wrap {
-  flex-wrap: wrap;
 }
 .items-start {
   align-items: flex-start;
@@ -1390,12 +1353,6 @@ html, body, a, button, input, textarea, select {
 }
 .gap-10 {
   gap: 2.5rem;
-}
-.gap-12 {
-  gap: 3rem;
-}
-.gap-16 {
-  gap: 4rem;
 }
 .gap-2 {
   gap: 0.5rem;
@@ -1444,11 +1401,20 @@ html, body, a, button, input, textarea, select {
 .overflow-hidden {
   overflow: hidden;
 }
+.overflow-y-auto {
+  overflow-y: auto;
+}
 .overflow-x-hidden {
   overflow-x: hidden;
 }
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
 .whitespace-nowrap {
   white-space: nowrap;
+}
+.whitespace-pre-line {
+  white-space: pre-line;
 }
 .rounded-full {
   border-radius: 9999px;
@@ -1478,6 +1444,9 @@ html, body, a, button, input, textarea, select {
 .border-sage\/25 {
   border-color: rgb(138 154 124 / 0.25);
 }
+.border-sage\/30 {
+  border-color: rgb(138 154 124 / 0.3);
+}
 .border-white\/10 {
   border-color: rgb(255 255 255 / 0.1);
 }
@@ -1492,6 +1461,9 @@ html, body, a, button, input, textarea, select {
 }
 .border-white\/\[0\.06\] {
   border-color: rgb(255 255 255 / 0.06);
+}
+.border-white\/\[0\.08\] {
+  border-color: rgb(255 255 255 / 0.08);
 }
 .bg-charcoal {
   --tw-bg-opacity: 1;
@@ -1515,8 +1487,8 @@ html, body, a, button, input, textarea, select {
   --tw-bg-opacity: 1;
   background-color: rgb(10 10 8 / var(--tw-bg-opacity, 1));
 }
-.bg-ink\/70 {
-  background-color: rgb(10 10 8 / 0.7);
+.bg-ink\/45 {
+  background-color: rgb(10 10 8 / 0.45);
 }
 .bg-ink\/85 {
   background-color: rgb(10 10 8 / 0.85);
@@ -1555,21 +1527,6 @@ html, body, a, button, input, textarea, select {
 .bg-white\/\[0\.06\] {
   background-color: rgb(255 255 255 / 0.06);
 }
-.bg-black\/50 {
-  background-color: rgb(0 0 0 / 0.5);
-}
-.bg-black\/55 {
-  background-color: rgb(0 0 0 / 0.55);
-}
-.bg-charcoal\/50 {
-  background-color: rgb(20 20 16 / 0.5);
-}
-.bg-charcoal\/60 {
-  background-color: rgb(20 20 16 / 0.6);
-}
-.bg-ink\/65 {
-  background-color: rgb(10 10 8 / 0.65);
-}
 .bg-\[radial-gradient\(ellipse_80\%_60\%_at_50\%_50\%\2c rgba\(45\2c 59\2c 39\2c 0\.4\)\2c transparent\)\] {
   background-image: radial-gradient(ellipse 80% 60% at 50% 50%,rgba(45,59,39,0.4),transparent);
 }
@@ -1584,11 +1541,6 @@ html, body, a, button, input, textarea, select {
 }
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-}
-.from-charcoal {
-  --tw-gradient-from: #141410 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(20 20 16 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .from-cream\/30 {
   --tw-gradient-from: rgb(242 237 228 / 0.3) var(--tw-gradient-from-position);
@@ -1605,8 +1557,8 @@ html, body, a, button, input, textarea, select {
   --tw-gradient-to: rgb(201 168 76 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-ink {
-  --tw-gradient-from: #0a0a08 var(--tw-gradient-from-position);
+.from-ink\/75 {
+  --tw-gradient-from: rgb(10 10 8 / 0.75) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(10 10 8 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -1640,16 +1592,6 @@ html, body, a, button, input, textarea, select {
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-\[\#8b3a1a\]\/20 {
-  --tw-gradient-from: rgb(139 58 26 / 0.2) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(139 58 26 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-\[\#8b3a1a\]\/30 {
-  --tw-gradient-from: rgb(139 58 26 / 0.3) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(139 58 26 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
 .via-charcoal {
   --tw-gradient-to: rgb(20 20 16 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #141410 var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -1662,13 +1604,17 @@ html, body, a, button, input, textarea, select {
   --tw-gradient-to: rgb(10 10 8 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #0a0a08 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
+.via-sage\/0 {
+  --tw-gradient-to: rgb(138 154 124 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(138 154 124 / 0) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.via-sage\/30 {
+  --tw-gradient-to: rgb(138 154 124 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(138 154 124 / 0.3) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
 .via-transparent {
   --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-.via-\[\#c44e1f\]\/10 {
-  --tw-gradient-to: rgb(196 78 31 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), rgb(196 78 31 / 0.1) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 .to-charcoal {
   --tw-gradient-to: #141410 var(--tw-gradient-to-position);
@@ -1692,22 +1638,30 @@ html, body, a, button, input, textarea, select {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.object-center {
-  -o-object-position: center;
-     object-position: center;
-}
 .p-2 {
   padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
 }
 .p-5 {
   padding: 1.25rem;
 }
-.p-8 {
-  padding: 2rem;
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.px-2\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
 }
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .px-5 {
   padding-left: 1.25rem;
@@ -1721,29 +1675,33 @@ html, body, a, button, input, textarea, select {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 .py-1\.5 {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
 }
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
 }
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-.py-28 {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 .py-3 {
   padding-top: 0.75rem;
@@ -1753,26 +1711,39 @@ html, body, a, button, input, textarea, select {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-.py-9 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
 }
 .py-px {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-.pb-20 {
-  padding-bottom: 5rem;
+.pb-16 {
+  padding-bottom: 4rem;
+}
+.pr-8 {
+  padding-right: 2rem;
+}
+.pt-24 {
+  padding-top: 6rem;
 }
 .pt-4 {
   padding-top: 1rem;
 }
 .pt-6 {
   padding-top: 1.5rem;
+}
+.text-left {
+  text-align: left;
 }
 .text-center {
   text-align: center;
@@ -1807,47 +1778,44 @@ html, body, a, button, input, textarea, select {
 .text-\[15px\] {
   font-size: 15px;
 }
-.text-\[16px\] {
-  font-size: 16px;
-}
-.text-\[1em\] {
-  font-size: 1em;
+.text-\[18px\] {
+  font-size: 18px;
 }
 .text-\[22px\] {
   font-size: 22px;
 }
-.text-\[24px\] {
-  font-size: 24px;
+.text-\[36px\] {
+  font-size: 36px;
 }
-.text-\[44px\] {
-  font-size: 44px;
+.text-\[38px\] {
+  font-size: 38px;
 }
-.text-\[48px\] {
-  font-size: 48px;
+.text-\[40px\] {
+  font-size: 40px;
 }
-.text-\[52px\] {
-  font-size: 52px;
+.text-\[72px\] {
+  font-size: 72px;
+}
+.text-\[8px\] {
+  font-size: 8px;
 }
 .text-\[9px\] {
   font-size: 9px;
 }
-.text-\[clamp\(36px\2c 4\.5vw\2c 58px\)\] {
-  font-size: clamp(36px, 4.5vw, 58px);
+.text-\[clamp\(18px\2c 4vw\2c 30px\)\] {
+  font-size: clamp(18px, 4vw, 30px);
 }
-.text-\[clamp\(36px\2c 4\.5vw\2c 60px\)\] {
-  font-size: clamp(36px, 4.5vw, 60px);
+.text-\[clamp\(30px\2c 7vw\2c 70px\)\] {
+  font-size: clamp(30px, 7vw, 70px);
 }
-.text-\[clamp\(38px\2c 5vw\2c 64px\)\] {
-  font-size: clamp(38px, 5vw, 64px);
+.text-\[clamp\(30px\2c 7vw\2c 72px\)\] {
+  font-size: clamp(30px, 7vw, 72px);
 }
-.text-\[clamp\(38px\2c 5vw\2c 68px\)\] {
-  font-size: clamp(38px, 5vw, 68px);
+.text-\[clamp\(32px\2c 7vw\2c 76px\)\] {
+  font-size: clamp(32px, 7vw, 76px);
 }
-.text-\[clamp\(60px\2c 9vw\2c 120px\)\] {
-  font-size: clamp(60px, 9vw, 120px);
-}
-.text-\[8px\] {
-  font-size: 8px;
+.text-\[clamp\(32px\2c 7vw\2c 80px\)\] {
+  font-size: clamp(32px, 7vw, 80px);
 }
 .font-extrabold {
   font-weight: 800;
@@ -1867,20 +1835,32 @@ html, body, a, button, input, textarea, select {
 .italic {
   font-style: italic;
 }
-.leading-\[0\.90\] {
-  line-height: 0.90;
-}
 .leading-\[0\.92\] {
   line-height: 0.92;
+}
+.leading-\[0\.93\] {
+  line-height: 0.93;
 }
 .leading-\[0\.95\] {
   line-height: 0.95;
 }
-.leading-\[1\.0\] {
-  line-height: 1.0;
+.leading-\[0\.97\] {
+  line-height: 0.97;
 }
-.leading-\[1\.6\] {
-  line-height: 1.6;
+.leading-\[1\.05\] {
+  line-height: 1.05;
+}
+.leading-\[1\.15\] {
+  line-height: 1.15;
+}
+.leading-\[1\.2\] {
+  line-height: 1.2;
+}
+.leading-\[1\.65\] {
+  line-height: 1.65;
+}
+.leading-\[1\.75\] {
+  line-height: 1.75;
 }
 .leading-\[1\.7\] {
   line-height: 1.7;
@@ -1890,9 +1870,6 @@ html, body, a, button, input, textarea, select {
 }
 .leading-\[1\.8\] {
   line-height: 1.8;
-}
-.leading-\[1\.9\] {
-  line-height: 1.9;
 }
 .leading-none {
   line-height: 1;
@@ -1906,14 +1883,23 @@ html, body, a, button, input, textarea, select {
 .tracking-\[-0\.02em\] {
   letter-spacing: -0.02em;
 }
+.tracking-\[0\.06em\] {
+  letter-spacing: 0.06em;
+}
 .tracking-\[0\.08em\] {
   letter-spacing: 0.08em;
 }
 .tracking-\[0\.12em\] {
   letter-spacing: 0.12em;
 }
+.tracking-\[0\.14em\] {
+  letter-spacing: 0.14em;
+}
 .tracking-\[0\.15em\] {
   letter-spacing: 0.15em;
+}
+.tracking-\[0\.16em\] {
+  letter-spacing: 0.16em;
 }
 .tracking-\[0\.18em\] {
   letter-spacing: 0.18em;
@@ -1921,17 +1907,11 @@ html, body, a, button, input, textarea, select {
 .tracking-\[0\.1em\] {
   letter-spacing: 0.1em;
 }
-.tracking-\[0\.22em\] {
-  letter-spacing: 0.22em;
-}
 .tracking-\[0\.25em\] {
   letter-spacing: 0.25em;
 }
 .tracking-\[0\.2em\] {
   letter-spacing: 0.2em;
-}
-.tracking-\[0\.35em\] {
-  letter-spacing: 0.35em;
 }
 .tracking-wide {
   letter-spacing: 0.025em;
@@ -1943,29 +1923,8 @@ html, body, a, button, input, textarea, select {
   --tw-text-opacity: 1;
   color: rgb(242 237 228 / var(--tw-text-opacity, 1));
 }
-.text-cream\/20 {
-  color: rgb(242 237 228 / 0.2);
-}
-.text-cream\/25 {
-  color: rgb(242 237 228 / 0.25);
-}
-.text-cream\/30 {
-  color: rgb(242 237 228 / 0.3);
-}
-.text-cream\/35 {
-  color: rgb(242 237 228 / 0.35);
-}
-.text-cream\/40 {
-  color: rgb(242 237 228 / 0.4);
-}
-.text-cream\/45 {
-  color: rgb(242 237 228 / 0.45);
-}
 .text-cream\/50 {
   color: rgb(242 237 228 / 0.5);
-}
-.text-cream\/55 {
-  color: rgb(242 237 228 / 0.55);
 }
 .text-cream\/60 {
   color: rgb(242 237 228 / 0.6);
@@ -1973,8 +1932,17 @@ html, body, a, button, input, textarea, select {
 .text-cream\/70 {
   color: rgb(242 237 228 / 0.7);
 }
+.text-cream\/75 {
+  color: rgb(242 237 228 / 0.75);
+}
 .text-cream\/80 {
   color: rgb(242 237 228 / 0.8);
+}
+.text-cream\/85 {
+  color: rgb(242 237 228 / 0.85);
+}
+.text-cream\/90 {
+  color: rgb(242 237 228 / 0.9);
 }
 .text-earth {
   --tw-text-opacity: 1;
@@ -1992,20 +1960,15 @@ html, body, a, button, input, textarea, select {
   --tw-text-opacity: 1;
   color: rgb(45 59 39 / var(--tw-text-opacity, 1));
 }
-.text-muted {
-  --tw-text-opacity: 1;
-  color: rgb(110 107 98 / var(--tw-text-opacity, 1));
-}
 .text-sage {
   --tw-text-opacity: 1;
   color: rgb(138 154 124 / var(--tw-text-opacity, 1));
 }
-.text-sage\/40 {
-  color: rgb(138 154 124 / 0.4);
+.text-sage\/80 {
+  color: rgb(138 154 124 / 0.8);
 }
-.text-bone {
-  --tw-text-opacity: 1;
-  color: rgb(224 216 204 / var(--tw-text-opacity, 1));
+.text-white\/\[0\.02\] {
+  color: rgb(255 255 255 / 0.02);
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;
@@ -2029,17 +1992,11 @@ html, body, a, button, input, textarea, select {
 .opacity-20 {
   opacity: 0.2;
 }
-.opacity-40 {
-  opacity: 0.4;
-}
 .opacity-50 {
   opacity: 0.5;
 }
 .opacity-60 {
   opacity: 0.6;
-}
-.mix-blend-overlay {
-  mix-blend-mode: overlay;
 }
 .outline-none {
   outline: 2px solid transparent;
@@ -2056,13 +2013,6 @@ html, body, a, button, input, textarea, select {
 }
 .blur-\[80px\] {
   --tw-blur: blur(80px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-.blur-\[100px\] {
-  --tw-blur: blur(100px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-.filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .backdrop-blur-md {
@@ -2102,9 +2052,6 @@ html, body, a, button, input, textarea, select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-none {
-  transition-property: none;
-}
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -2114,13 +2061,11 @@ html, body, a, button, input, textarea, select {
 .duration-500 {
   transition-duration: 500ms;
 }
-/* Grain texture overlay */
+/* Grain overlay */
 .grain::after {
     content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9999;
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 9999;
     opacity: var(--noise-opacity);
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-repeat: repeat;
@@ -2133,20 +2078,11 @@ html, body, a, button, input, textarea, select {
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 4px;
-  }
-::-webkit-scrollbar-track {
-    background: #0a0a08;
-  }
-::-webkit-scrollbar-thumb {
-    background: #2d3b27;
-    border-radius: 2px;
-  }
-::-webkit-scrollbar-thumb:hover {
-    background: #8a9a7c;
-  }
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a08; }
+::-webkit-scrollbar-thumb { background: #2d3b27; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #8a9a7c; }
 .\[animation-delay\:2s\] {
   animation-delay: 2s;
 }
@@ -2154,147 +2090,258 @@ html, body, a, button, input, textarea, select {
   writing-mode: vertical-rl;
 }
 
-/* Cursor */
+/* ── All sections transparent — background bleeds through ── */
+section {
+  background-color: transparent !important;
+}
+footer {
+  background-color: rgba(10, 10, 8, 0.82) !important;
+}
+
+/* Semi-transparent cards/bars */
+.bg-charcoal {
+  background-color: rgba(20, 20, 16, 0.68) !important;
+}
+.bg-ink {
+  background-color: rgba(10, 10, 8, 0.72) !important;
+}
+
+/* ── Cursor ── */
 .cursor-dot {
   position: fixed;
-  width: 8px;
-  height: 8px;
+  width: 8px; height: 8px;
   background: #f2ede4;
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
   transform: translate(-50%, -50%);
-  transition: transform 0.1s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+  transition: width 0.2s, height 0.2s, background 0.2s;
   mix-blend-mode: difference;
 }
-
 .cursor-ring {
   position: fixed;
-  width: 38px;
-  height: 38px;
+  width: 38px; height: 38px;
   border: 1px solid rgba(242, 237, 228, 0.35);
   border-radius: 50%;
   pointer-events: none;
   z-index: 99998;
   transform: translate(-50%, -50%);
-  transition: transform 0.35s ease, width 0.3s ease, height 0.3s ease, border-color 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.35s ease, width 0.3s ease, height 0.3s ease, border-color 0.2s ease;
 }
+.cursor-dot.hovering { width: 12px; height: 12px; background: #c9a84c; }
+.cursor-ring.hovering { width: 56px; height: 56px; border-color: rgba(201, 168, 76, 0.5); }
 
-.cursor-dot.hovering {
-  width: 12px;
-  height: 12px;
-  background: #c9a84c;
-}
-
-.cursor-ring.hovering {
-  width: 56px;
-  height: 56px;
-  border-color: rgba(201, 168, 76, 0.5);
-}
-
-
-.cursor-dot {
-  z-index: 99999;
-}
-.cursor-ring {
-  z-index: 99998;
-}
-
-
-
+/* Scroll-% ring */
 .cursor-sight {
-  width: 56px;   /* was 36px */
-  height: 56px;  /* was 36px */
-  border: none;  /* remove the CSS border — SVG handles it now */
-  border-radius: 50%;
+  width: 56px; height: 56px;
+  border: none; border-radius: 50%;
   z-index: 99999;
-  /* keep everything else the same */
 }
-
 .cursor-sight.hovering {
-  width: 56px;   /* keep size stable, just change glow */
-  height: 56px;
+  width: 56px; height: 56px;
   border: none;
   box-shadow: 0 0 16px rgba(232, 114, 28, 0.4);
 }
 
+/* ── Keyframes ── */
+@keyframes grain {
+  0%, 100% { background-position: 0 0; }
+  10%  { background-position: -5% -10%; }
+  20%  { background-position: -15% 5%; }
+  30%  { background-position: 7% -25%; }
+  40%  { background-position: 20% 25%; }
+  50%  { background-position: -25% 10%; }
+  60%  { background-position: 15% 5%; }
+  70%  { background-position: 0 15%; }
+  80%  { background-position: 25% 35%; }
+  90%  { background-position: -10% 10%; }
+}
+@keyframes scrollLine {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.15); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-12px) rotate(1deg); }
+  66%       { transform: translateY(-6px) rotate(-0.5deg); }
+}
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.last\:mb-0:last-child {
+  margin-bottom: 0px;
+}
 .last\:border-r-0:last-child {
   border-right-width: 0px;
 }
-
+.hover\:border-white\/30:hover {
+  border-color: rgb(255 255 255 / 0.3);
+}
+.hover\:bg-charcoal:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 20 16 / var(--tw-bg-opacity, 1));
+}
 .hover\:bg-gold:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(201 168 76 / var(--tw-bg-opacity, 1));
 }
-
 .hover\:bg-moss\/10:hover {
   background-color: rgb(45 59 39 / 0.1);
 }
-
 .hover\:bg-sage:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(138 154 124 / var(--tw-bg-opacity, 1));
 }
-
 .hover\:bg-white\/\[0\.02\]:hover {
   background-color: rgb(255 255 255 / 0.02);
 }
-
 .hover\:text-cream:hover {
   --tw-text-opacity: 1;
   color: rgb(242 237 228 / var(--tw-text-opacity, 1));
 }
-
 .hover\:text-cream\/50:hover {
   color: rgb(242 237 228 / 0.5);
 }
-
 .hover\:text-cream\/70:hover {
   color: rgb(242 237 228 / 0.7);
 }
-
 .hover\:text-ink:hover {
   --tw-text-opacity: 1;
   color: rgb(10 10 8 / var(--tw-text-opacity, 1));
 }
-
 .hover\:text-sage:hover {
   --tw-text-opacity: 1;
   color: rgb(138 154 124 / var(--tw-text-opacity, 1));
 }
-
 .focus\:border-sage\/50:focus {
   border-color: rgb(138 154 124 / 0.5);
 }
-
 .focus\:bg-white\/\[0\.08\]:focus {
   background-color: rgb(255 255 255 / 0.08);
 }
-
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
 .group\/btn:hover .group-hover\/btn\:translate-x-0\.5 {
   --tw-translate-x: 0.125rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
+.group:hover .group-hover\:-translate-x-0\.5 {
+  --tw-translate-x: -0.125rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .group:hover .group-hover\:translate-x-1 {
   --tw-translate-x: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
+.group:hover .group-hover\:via-sage\/50 {
+  --tw-gradient-to: rgb(138 154 124 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(138 154 124 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
 .group:hover .group-hover\:text-gold {
   --tw-text-opacity: 1;
   color: rgb(201 168 76 / var(--tw-text-opacity, 1));
 }
-
+.group:hover .group-hover\:text-sage {
+  --tw-text-opacity: 1;
+  color: rgb(138 154 124 / var(--tw-text-opacity, 1));
+}
+.group:hover .group-hover\:text-white\/\[0\.04\] {
+  color: rgb(255 255 255 / 0.04);
+}
 .group:hover .group-hover\:opacity-40 {
   opacity: 0.4;
 }
-
 .group:hover .group-hover\:opacity-70 {
   opacity: 0.7;
 }
-
 @media (min-width: 640px) {
+
+  .sm\:bottom-10 {
+    bottom: 2.5rem;
+  }
+
+  .sm\:right-12 {
+    right: 3rem;
+  }
+
+  .sm\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
+  .sm\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
+  .sm\:mb-24 {
+    margin-bottom: 6rem;
+  }
+
+  .sm\:mb-3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .sm\:mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
+  .sm\:mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .sm\:mb-7 {
+    margin-bottom: 1.75rem;
+  }
+
+  .sm\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .sm\:mt-16 {
+    margin-top: 4rem;
+  }
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:h-14 {
+    height: 3.5rem;
+  }
+
+  .sm\:w-10 {
+    width: 2.5rem;
+  }
+
+  .sm\:w-\[160px\] {
+    width: 160px;
+  }
+
+  .sm\:w-\[340px\] {
+    width: 340px;
+  }
+
+  .sm\:w-auto {
+    width: auto;
+  }
+
+  .sm\:max-w-\[360px\] {
+    max-width: 360px;
+  }
+
+  .sm\:max-w-\[420px\] {
+    max-width: 420px;
+  }
+
+  .sm\:max-w-\[800px\] {
+    max-width: 800px;
+  }
 
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2303,12 +2350,184 @@ html, body, a, button, input, textarea, select {
   .sm\:flex-row {
     flex-direction: row;
   }
-}
 
+  .sm\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .sm\:items-center {
+    align-items: center;
+  }
+
+  .sm\:gap-10 {
+    gap: 2.5rem;
+  }
+
+  .sm\:gap-16 {
+    gap: 4rem;
+  }
+
+  .sm\:gap-3 {
+    gap: 0.75rem;
+  }
+
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+
+  .sm\:gap-8 {
+    gap: 2rem;
+  }
+
+  .sm\:p-7 {
+    padding: 1.75rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
+  }
+
+  .sm\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .sm\:px-7 {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .sm\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .sm\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .sm\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .sm\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .sm\:py-28 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .sm\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .sm\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .sm\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .sm\:py-9 {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .sm\:pb-20 {
+    padding-bottom: 5rem;
+  }
+
+  .sm\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .sm\:text-left {
+    text-align: left;
+  }
+
+  .sm\:text-\[10px\] {
+    font-size: 10px;
+  }
+
+  .sm\:text-\[11px\] {
+    font-size: 11px;
+  }
+
+  .sm\:text-\[12px\] {
+    font-size: 12px;
+  }
+
+  .sm\:text-\[13px\] {
+    font-size: 13px;
+  }
+
+  .sm\:text-\[14px\] {
+    font-size: 14px;
+  }
+
+  .sm\:text-\[15px\] {
+    font-size: 15px;
+  }
+
+  .sm\:text-\[16px\] {
+    font-size: 16px;
+  }
+
+  .sm\:text-\[17px\] {
+    font-size: 17px;
+  }
+
+  .sm\:text-\[18px\] {
+    font-size: 18px;
+  }
+
+  .sm\:text-\[22px\] {
+    font-size: 22px;
+  }
+
+  .sm\:text-\[44px\] {
+    font-size: 44px;
+  }
+
+  .sm\:text-\[48px\] {
+    font-size: 48px;
+  }
+
+  .sm\:text-\[52px\] {
+    font-size: 52px;
+  }
+
+  .sm\:tracking-\[0\.22em\] {
+    letter-spacing: 0.22em;
+  }
+}
 @media (min-width: 768px) {
 
-  .md\:right-12 {
-    right: 3rem;
+  .md\:block {
+    display: block;
+  }
+
+  .md\:inline-block {
+    display: inline-block;
   }
 
   .md\:flex {
@@ -2319,8 +2538,16 @@ html, body, a, button, input, textarea, select {
     display: none;
   }
 
+  .md\:w-\[200px\] {
+    width: 200px;
+  }
+
   .md\:w-\[420px\] {
     width: 420px;
+  }
+
+  .md\:max-w-\[420px\] {
+    max-width: 420px;
   }
 
   .md\:grid-cols-2 {
@@ -2347,6 +2574,14 @@ html, body, a, button, input, textarea, select {
     padding: 2.5rem;
   }
 
+  .md\:p-8 {
+    padding: 2rem;
+  }
+
+  .md\:p-9 {
+    padding: 2.25rem;
+  }
+
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -2355,6 +2590,11 @@ html, body, a, button, input, textarea, select {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:px-9 {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
   }
 
   .md\:py-20 {
@@ -2375,8 +2615,19 @@ html, body, a, button, input, textarea, select {
   .md\:pb-28 {
     padding-bottom: 7rem;
   }
-}
 
+  .md\:text-\[26px\] {
+    font-size: 26px;
+  }
+
+  .md\:text-\[52px\] {
+    font-size: 52px;
+  }
+
+  .md\:text-\[60px\] {
+    font-size: 60px;
+  }
+}
 @media (min-width: 1024px) {
 
   .lg\:-left-8 {
@@ -2408,6 +2659,10 @@ html, body, a, button, input, textarea, select {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -2416,8 +2671,8 @@ html, body, a, button, input, textarea, select {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .lg\:gap-10 {
+    gap: 2.5rem;
   }
 
   .lg\:gap-12 {
@@ -2436,15 +2691,23 @@ html, body, a, button, input, textarea, select {
     padding-left: 4rem;
     padding-right: 4rem;
   }
-}
 
+  .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .lg\:text-\[11px\] {
+    font-size: 11px;
+  }
+}
 .\[\&\:nth-child\(2\)\]\:border-r-0:nth-child(2) {
   border-right-width: 0px;
 }
-
 @media (min-width: 768px) {
 
   .md\:\[\&\:nth-child\(2\)\]\:border-r:nth-child(2) {
     border-right-width: 1px;
   }
 }
+
