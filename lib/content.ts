@@ -144,19 +144,6 @@ export const c = {
         },
         pattern: 'ring',
         color: 'Earth'
-      },
-      {
-        id: 4,
-        name: { mn: 'BIOMIX Тусгай', en: 'BIOMIX Special' },
-        species: { mn: 'Хөрс нөхөн сэргээлт', en: 'Soil Remediation' },
-        region: { mn: 'Тариалангийн талбай', en: 'Agricultural Fields' },
-        tag: null,
-        description: {
-          mn: 'Байгальд хаягдал гэж байдаггүй. Органик нөөцийг үржил шимт хөрс болгон хувиргаж, байгалийн мөчлөгийг Монголын хөрсөнд үргэлжлүүлдэг.',
-          en: "There is no waste in nature. We transform organic resources into fertile soil, continuing nature's cycle in Mongolia's earth."
-        },
-        pattern: 'smooth',
-        color: 'Moss'
       }
     ],
     viewAll: { mn: 'Бүгдийг харах', en: 'View all' }
