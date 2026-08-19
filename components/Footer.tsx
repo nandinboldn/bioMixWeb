@@ -10,7 +10,7 @@ export default function Footer() {
   const cols = f.cols[lang];
 
   return (
-    <footer className="bg-charcoal border-t border-white/[0.06]">
+    <footer className="bg-charcoal border-t border-white/[0.06]" id="footer">
       <div className="px-5 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 md:py-20 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-8">
           {/* Brand column */}

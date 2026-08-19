@@ -99,7 +99,7 @@ export default function Process() {
         {/* CTA strip */}
         <div
           data-reveal
-          className="mt-8 sm:mt-16 p-5 sm:p-8 md:p-10 border border-sage/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+          className="mt-8 sm:mt-16 p-5 sm:p-8 md:p-10 border border-white/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
           style={{ opacity: 0, transform: "translateY(20px)", transition: "opacity 0.8s 0.5s ease, transform 0.8s 0.5s ease" }}
         >
           <div>
@@ -107,8 +107,8 @@ export default function Process() {
             <p className="font-sans text-[12px] text-cream/85 leading-relaxed">{t(p.ctaSub, lang)}</p>
           </div>
           <a
-            href="#"
-            className="font-mono text-[10px] tracking-[0.18em] uppercase bg-sage/15 border border-sage/25 text-sage px-8 py-4 hover:bg-sage hover:text-ink transition-all duration-300 flex-shrink-0"
+            href="#footer"
+            className="font-mono text-[10px] tracking-[0.18em] uppercase bg-sage/15 border border-sage/25 text-white px-8 py-4 hover:bg-sage hover:text-ink transition-all duration-300 flex-shrink-0"
           >
             {t(p.ctaBtn, lang)}
           </a>
