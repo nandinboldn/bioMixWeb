@@ -2,7 +2,7 @@ export const c = {
   nav: {
     links: {
       mn: [
-        { label: 'Бид хэн бэ?', href: '#mission' },
+        { label: 'Бид хэн бэ', href: '#mission' },
         { label: 'Бүтээгдэхүүн', href: '#products' },
         { label: 'Үйл явц', href: '#process' },
         { label: 'Нөлөө', href: '#impact' }
@@ -24,7 +24,7 @@ export const c = {
     },
     title: {
       mn: ['ЦӨЛЖИЛТИЙН ЭСРЭГ', 'МОНГОЛ', 'ХӨРС.'],
-      en: ['FROM SOIL,', 'LIFE', 'BEGINS.']
+      en: ['MONGOLIAN SOIL,', 'AGAINST', 'DESERTIFICATION.']
     },
     desc: {
       mn: 'Өнөөдөр бидний хамгаалж, сайжруулж буй хөрс маргаашийн ой мод, хүнс, эрүүл орчин болон хойч үед үлдэх үнэт өв юм.',
@@ -109,6 +109,7 @@ export const c = {
       {
         id: 1,
         name: { mn: 'BIOMIX 20L', en: 'BIOMIX 20L' },
+        image: '/pictures/product1.jpg',
         species: { mn: 'Том талбайд зориулсан', en: 'For large areas' },
         region: { mn: 'Гадаа / Дотоод', en: 'Indoor / Outdoor' },
         tag: { mn: 'Шилдэг борлуулалт', en: 'Bestseller' },
@@ -122,6 +123,7 @@ export const c = {
       {
         id: 2,
         name: { mn: 'BIOMIX 5L', en: 'BIOMIX 5L' },
+        image: '/pictures/product2.jpg',
         species: { mn: 'Энгийнээр эхлэх', en: 'Easy to start' },
         region: { mn: 'Органик компост', en: 'Organic Compost' },
         tag: { mn: 'Хамгийн эрэлттэй', en: 'Most Popular' },
@@ -135,6 +137,7 @@ export const c = {
       {
         id: 3,
         name: { mn: 'BIOMIX 3L', en: 'BIOMIX 3L' },
+        image: '/pictures/product3.jpg',
         species: { mn: 'Жижиг саванд', en: 'For small pots' },
         region: { mn: 'Гэрийн ургамал', en: 'Indoor Plants' },
         tag: { mn: 'Шинэ', en: 'New' },
@@ -345,7 +348,7 @@ export const c = {
     },
     contact: {
       phone: '+976-8050 0879',
-      email: 'biomix.compost@gmail.com',
+      email: 'biomixcompost@gmail.com',
       web: 'www.biomix.com',
       addr: {
         mn: 'Баруун Туруун 55, А0301, Хороо 32, Улаанбаатар',

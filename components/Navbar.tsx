@@ -69,7 +69,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA — desktop only */}
-          <a href='#products' className='hidden md:inline-block font-mono text-[10px] lg:text-[11px] tracking-[0.12em] uppercase bg-cream text-ink px-4 lg:px-6 py-2.5 sm:py-3 hover:bg-gold transition-colors duration-300 font-light'>
+          <a href='#products' className='hidden md:inline-block font-mono text-[10px] lg:text-[11px] tracking-[0.12em] uppercase bg-cream text-ink px-2.5 lg:px-6 py-1.5 sm:py-2 hover:bg-gold transition-colors duration-300 font-light'>
             {t(c.nav.cta, lang)}
           </a>
 

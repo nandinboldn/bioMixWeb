@@ -9,7 +9,7 @@ const LangCtx = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({
 });
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("mn");
+  const [lang, setLang] = useState<Lang>("en");
   return <LangCtx.Provider value={{ lang, setLang }}>{children}</LangCtx.Provider>;
 }
 
